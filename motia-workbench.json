@@ -1,0 +1,98 @@
+{
+  "Content": {
+    "steps/generate-story/agents/content-outliner.step.ts": {
+      "x": 167.92717542029277,
+      "y": 489.04358975534956
+    },
+    "steps/generate-story/agents/content-writer.step.ts": {
+      "x": 171.52035582111776,
+      "y": 660.1930060615947
+    },
+    "steps/generate-story/agents/ideator.step.ts": {
+      "x": 544.5700679371118,
+      "y": 234.03021100718902
+    },
+    "steps/generate-story/content-created.step.ts": {
+      "x": 92.76824109236293,
+      "y": 818.5556982364541
+    },
+    "steps/generate-story/api/generate-content-api.step.ts": {
+      "x": 501.0800816916099,
+      "y": 15.008449491460283
+    },
+    "steps/generate-story/api/get-content-status.step.ts": {
+      "x": 628.1711419127327,
+      "y": 872.9552663853435
+    },
+    "steps/generate-story/content-wip.step.ts": {
+      "x": 609.1260485295049,
+      "y": 511.19217507610665
+    },
+    "steps/generate-story/api/get-content.step.ts": {
+      "x": 664.4996549363968,
+      "y": 722.7265970316229
+    },
+    "steps/content/agents/content-outliner.step.ts": {
+      "x": 136.75,
+      "y": 412
+    },
+    "steps/content/agents/content-writer.step.ts": {
+      "x": 78.5,
+      "y": 588
+    },
+    "steps/content/agents/ideator.step.ts": {
+      "x": 301,
+      "y": 236
+    },
+    "steps/content/api/generate-content-api.step.ts": {
+      "x": 257.5,
+      "y": 0
+    },
+    "steps/content/api/get-content.step.ts": {
+      "x": 253.5,
+      "y": 954
+    },
+    "steps/content/content-created.step.ts": {
+      "x": 0.7061531330071773,
+      "y": 740.6969466107636
+    },
+    "steps/content/content-wip.step.ts": {
+      "x": 407.27297189001473,
+      "y": 651.0524072778379
+    }
+  },
+  "Story": {
+    "steps/generate-story/api/get-content-status.step.ts": {
+      "x": 0,
+      "y": 0
+    },
+    "steps/generate-story/api/get-story.step.ts": {
+      "x": 258,
+      "y": 0
+    }
+  },
+  "test-state": {
+    "steps/test.step.py": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "default": {
+    "steps/api.step.ts": {
+      "x": 0,
+      "y": 186
+    },
+    "steps/noop.step.ts": {
+      "x": 46.5,
+      "y": 0
+    },
+    "steps/one.step.ts": {
+      "x": 18,
+      "y": 422
+    },
+    "steps/two.step.ts": {
+      "x": 8,
+      "y": 598
+    }
+  }
+}

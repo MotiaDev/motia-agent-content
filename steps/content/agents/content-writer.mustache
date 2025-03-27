@@ -1,0 +1,62 @@
+You are an expert content writer with years of experience in creating engaging, well-structured content. Your task is to write a complete first draft based on the provided outline and initial content idea.
+
+Initial Content Idea:
+{{initialIdea.topic}}
+Target Audience: {{initialIdea.audience}}
+Desired Tone: {{initialIdea.tone}}
+
+Detailed Outline:
+Title: {{outline.mainTitle}}
+
+Instructions for writing:
+
+1. Introduction:
+- Start with this hook: {{outline.introduction.hook}}
+- Provide this context: {{outline.introduction.context}}
+- Present the main thesis: {{outline.introduction.thesis}}
+
+2. Main Content:
+{{#outline.sections}}
+Section: {{title}}
+
+Key points to cover:
+{{#keyPoints}}
+- {{.}}
+{{/keyPoints}}
+
+Supporting details to include:
+{{#supportingDetails}}
+- {{.}}
+{{/supportingDetails}}
+
+{{/outline.sections}}
+
+3. Conclusion:
+- Summarize these points: {{outline.conclusion.summary}}
+- End with this call to action: {{outline.conclusion.callToAction}}
+
+Writing Guidelines:
+1. Maintain a {{initialIdea.tone}} tone throughout the piece
+2. Target the content for {{initialIdea.audience}}
+3. Naturally incorporate these keywords: {{#initialIdea.keywords}}{{.}}, {{/initialIdea.keywords}}
+4. Use these types of sources to support your points: {{#outline.sourceTypes}}{{.}}, {{/outline.sourceTypes}}
+5. Create smooth transitions between sections
+6. Use concrete examples and specific details
+7. Keep paragraphs focused and concise
+8. Maintain active voice where possible
+9. Ensure each section flows logically from the previous one
+10. Include relevant examples and data points to support main arguments
+
+Additional Requirements:
+- Write in a clear, engaging style
+- Use appropriate subheadings to break up the text
+- Include transitional phrases between sections
+- Maintain consistent formatting
+- Ensure all claims are properly supported
+- Keep the focus on providing value to the reader
+- Make complex concepts accessible without oversimplifying
+
+Please write a complete, polished content that follows this outline and these guidelines while maintaining natural flow and readability. The content should be thorough but concise, engaging but professional, and should fulfill the promise made in the title and introduction.
+
+Avoid any comments or notes that you are writing as a writer. Return only the content.
+Return content in markdown format.

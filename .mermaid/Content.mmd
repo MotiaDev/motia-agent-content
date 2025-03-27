@@ -1,0 +1,20 @@
+flowchart TD
+    classDef apiStyle fill:#f96,stroke:#333,stroke-width:2px,color:#fff
+    classDef eventStyle fill:#69f,stroke:#333,stroke-width:2px,color:#fff
+    classDef cronStyle fill:#9c6,stroke:#333,stroke-width:2px,color:#fff
+    classDef noopStyle fill:#3f3a50,stroke:#333,stroke-width:2px,color:#fff
+    steps_content_agents_content_outliner_step["⚡ Content Outliner"]:::eventStyle
+    steps_content_agents_content_writer_step["⚡ Content Writer"]:::eventStyle
+    steps_content_agents_ideator_step["⚡ Ideator"]:::eventStyle
+    steps_content_api_generate_content_api_step["🌐 Content"]:::apiStyle
+    steps_content_api_get_content_step["🌐 Get Content"]:::apiStyle
+    steps_content_content_created_step["⚙️ Content is generated"]:::noopStyle
+    steps_content_content_wip_step["⚙️ Content Work in Progress"]:::noopStyle
+    steps_content_agents_content_outliner_step -->|Write first content| steps_content_agents_content_writer_step
+    steps_content_agents_content_outliner_step -->|virtual-write-content| steps_content_content_wip_step
+    steps_content_agents_content_writer_step -->|content-created| steps_content_content_created_step
+    steps_content_agents_ideator_step -->|Create content outline| steps_content_agents_content_outliner_step
+    steps_content_agents_ideator_step -->|virtual-build-outline| steps_content_content_wip_step
+    steps_content_api_generate_content_api_step -->|create-content| steps_content_agents_ideator_step
+    steps_content_content_created_step -->|/api/get-content| steps_content_api_get_content_step
+    steps_content_content_wip_step -->|/api/get-content| steps_content_api_get_content_step

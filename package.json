@@ -1,0 +1,32 @@
+{
+  "name": "motia-content-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "motia dev",
+    "build": "motia build",
+    "dev:debug": "motia dev --debug",
+    "get-config": "motia get-config --output ./",
+    "dev": "motia dev",
+    "olddev": "motia dev"
+  },
+  "keywords": [],
+  "author": "Sergio Marcelino <sergio@filho.org>",
+  "license": "ISC",
+  "dependencies": {
+    "@motiadev/core": "^0.1.0-beta.15",
+    "@motiadev/workbench": "^0.1.0-beta.15",
+    "motia": "^0.1.0-beta.18",
+    "mustache": "^4.2.0",
+    "openai": "^4.82.0",
+    "react": "^19.0.0",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/mustache": "^4.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
