@@ -11,7 +11,7 @@ import { ContentState } from '../../../src/content-state'
 const input = z.object({ contentIdea: z.string(), contentType: z.string() })
 
 export const config: EventConfig<typeof input> = {
-  name: 'Ideator',
+  name: 'Ideator Agent',
   description: 'Responsible for generating initial content ideas and high-level direction.',
   type: 'event',
   emits: [{ topic: 'build-outline', label: 'Create content outline' }],

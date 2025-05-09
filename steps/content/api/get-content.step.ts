@@ -18,12 +18,16 @@ export const handler: StepHandler<typeof config> = async (req: ApiRequest, ctx: 
   const { contentId } = req.pathParams
   const contentState = new ContentState(ctx.state)
 
+  ctx.logger.info('Getting content', { contentId })
+
   const [status, content, outline, idea] = await Promise.all([
     contentState.getStatus(contentId),
     contentState.getContent(contentId),
     contentState.getContentOutline(contentId),
     contentState.getContentIdea(contentId),
   ])
+
+  ctx.logger.info('Content', { contentId, status, content, outline, idea })
 
   return {
     status: 200,
@@ -33,6 +37,7 @@ export const handler: StepHandler<typeof config> = async (req: ApiRequest, ctx: 
       idea,
       outline,
       content,
+      version: process.env.MOTIA_VERSION,
     },
   }
 }

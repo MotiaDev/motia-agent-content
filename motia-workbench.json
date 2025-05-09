@@ -33,32 +33,32 @@
       "y": 722.7265970316229
     },
     "steps/content/agents/content-outliner.step.ts": {
-      "x": 136.75,
-      "y": 412
+      "x": -17.31546170425929,
+      "y": 473.0364715079356
     },
     "steps/content/agents/content-writer.step.ts": {
-      "x": 78.5,
-      "y": 588
+      "x": -96.4945109604217,
+      "y": 750.2497987051617
     },
     "steps/content/agents/ideator.step.ts": {
-      "x": 301,
-      "y": 236
+      "x": -5.511167721717925,
+      "y": -216.58856634372947
     },
     "steps/content/api/generate-content-api.step.ts": {
-      "x": 257.5,
-      "y": 0
+      "x": 47.823609467985705,
+      "y": -438.30434082216385
     },
     "steps/content/api/get-content.step.ts": {
-      "x": 253.5,
-      "y": 954
+      "x": 553.810658993855,
+      "y": 628.4634473191765
     },
     "steps/content/content-created.step.ts": {
-      "x": 0.7061531330071773,
-      "y": 740.6969466107636
+      "x": -124.53443134237483,
+      "y": 971.4131132162314
     },
     "steps/content/content-wip.step.ts": {
-      "x": 407.27297189001473,
-      "y": 651.0524072778379
+      "x": 446.48097436092905,
+      "y": 411.787049400178
     }
   },
   "Story": {
