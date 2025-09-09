@@ -1,10 +1,10 @@
-import { ApiRequest, ApiRouteConfig, FlowContext, StepHandler } from 'motia'
+import { ApiRouteConfig, Handlers } from 'motia'
 import { z } from 'zod'
 import { ContentState } from '../../../src/content-state'
 
 export const config: ApiRouteConfig = {
   type: 'api',
-  name: 'Get Content',
+  name: 'GetContent',
   description: 'Get the content',
   method: 'GET',
   path: '/content/:contentId',
@@ -14,7 +14,7 @@ export const config: ApiRouteConfig = {
   virtualSubscribes: ['/api/get-content'],
 }
 
-export const handler: StepHandler<typeof config> = async (req: ApiRequest, ctx: FlowContext) => {
+export const handler: Handlers['GetContent'] = async (req, ctx) => {
   const { contentId } = req.pathParams
   const contentState = new ContentState(ctx.state)
 

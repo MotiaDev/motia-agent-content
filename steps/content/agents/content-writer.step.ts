@@ -1,18 +1,18 @@
-import { EventConfig, FlowContext, StepHandler } from 'motia'
-import Mustache from 'mustache'
 import fs from 'fs'
+import { EventConfig, FlowContext, Handlers } from 'motia'
+import Mustache from 'mustache'
 import path from 'path'
 import { z } from 'zod'
-import { openai } from '../../../src/openai'
 import { ContentState } from '../../../src/content-state'
+import { openai } from '../../../src/openai'
 
 const input = z.object({ contentId: z.string() })
 
-export const config: EventConfig<typeof input> = {
-  name: 'Content Writer',
+export const config: EventConfig = {
+  name: 'ContentWriter',
   description: 'Responsible for writing content based on the detailed outline',
   type: 'event',
-  emits: [{ topic: 'edit-content', label: 'Edit content' }],
+  emits: [],
   flows: ['Content'],
   subscribes: ['write-content'],
   input,
@@ -20,7 +20,7 @@ export const config: EventConfig<typeof input> = {
   includeFiles: ['./content-writer.mustache'],
 }
 
-export const handler: StepHandler<typeof config> = async (input, { logger, state, emit, traceId }: FlowContext) => {
+export const handler: Handlers['ContentWriter'] = async (input, { logger, state }) => {
   const { contentId } = input
   const contentState = new ContentState(state)
 
@@ -49,9 +49,4 @@ export const handler: StepHandler<typeof config> = async (input, { logger, state
 
   await contentState.setStatus(contentId, 'content-generated')
   await contentState.setContent(contentId, content)
-
-  await emit({
-    topic: 'edit-content',
-    data: { contentId },
-  })
 }

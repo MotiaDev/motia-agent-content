@@ -1,98 +1,45 @@
-{
-  "Content": {
-    "steps/generate-story/agents/content-outliner.step.ts": {
-      "x": 167.92717542029277,
-      "y": 489.04358975534956
-    },
-    "steps/generate-story/agents/content-writer.step.ts": {
-      "x": 171.52035582111776,
-      "y": 660.1930060615947
-    },
-    "steps/generate-story/agents/ideator.step.ts": {
-      "x": 544.5700679371118,
-      "y": 234.03021100718902
-    },
-    "steps/generate-story/content-created.step.ts": {
-      "x": 92.76824109236293,
-      "y": 818.5556982364541
-    },
-    "steps/generate-story/api/generate-content-api.step.ts": {
-      "x": 501.0800816916099,
-      "y": 15.008449491460283
-    },
-    "steps/generate-story/api/get-content-status.step.ts": {
-      "x": 628.1711419127327,
-      "y": 872.9552663853435
-    },
-    "steps/generate-story/content-wip.step.ts": {
-      "x": 609.1260485295049,
-      "y": 511.19217507610665
-    },
-    "steps/generate-story/api/get-content.step.ts": {
-      "x": 664.4996549363968,
-      "y": 722.7265970316229
-    },
-    "steps/content/agents/content-outliner.step.ts": {
-      "x": -17.31546170425929,
-      "y": 473.0364715079356
-    },
-    "steps/content/agents/content-writer.step.ts": {
-      "x": -96.4945109604217,
-      "y": 750.2497987051617
-    },
-    "steps/content/agents/ideator.step.ts": {
-      "x": -5.511167721717925,
-      "y": -216.58856634372947
-    },
-    "steps/content/api/generate-content-api.step.ts": {
-      "x": 47.823609467985705,
-      "y": -438.30434082216385
-    },
-    "steps/content/api/get-content.step.ts": {
-      "x": 553.810658993855,
-      "y": 628.4634473191765
-    },
-    "steps/content/content-created.step.ts": {
-      "x": -124.53443134237483,
-      "y": 971.4131132162314
-    },
-    "steps/content/content-wip.step.ts": {
-      "x": 446.48097436092905,
-      "y": 411.787049400178
-    }
-  },
-  "Story": {
-    "steps/generate-story/api/get-content-status.step.ts": {
-      "x": 0,
-      "y": 0
-    },
-    "steps/generate-story/api/get-story.step.ts": {
-      "x": 258,
-      "y": 0
-    }
-  },
-  "test-state": {
-    "steps/test.step.py": {
-      "x": 0,
-      "y": 0
-    }
-  },
-  "default": {
-    "steps/api.step.ts": {
-      "x": 0,
-      "y": 186
-    },
-    "steps/noop.step.ts": {
-      "x": 46.5,
-      "y": 0
-    },
-    "steps/one.step.ts": {
-      "x": 18,
-      "y": 422
-    },
-    "steps/two.step.ts": {
-      "x": 8,
-      "y": 598
+[
+  {
+    "id": "Content",
+    "config": {
+      "steps/content/content-wip.step.ts": {
+        "x": 1039,
+        "y": 324,
+        "sourceHandlePosition": "bottom",
+        "targetHandlePosition": "left"
+      },
+      "steps/content/content-created.step.ts": {
+        "x": 842,
+        "y": 683,
+        "sourceHandlePosition": "right",
+        "targetHandlePosition": "left"
+      },
+      "steps/content/api/get-content.step.ts": {
+        "x": 1240,
+        "y": 513,
+        "targetHandlePosition": "left"
+      },
+      "steps/content/api/generate-content-api.step.ts": {
+        "x": 76,
+        "y": 204
+      },
+      "steps/content/agents/ideator.step.ts": {
+        "x": 405,
+        "y": 228,
+        "sourceHandlePosition": "bottom"
+      },
+      "steps/content/agents/content-writer.step.ts": {
+        "x": 407,
+        "y": 683,
+        "sourceHandlePosition": "right",
+        "targetHandlePosition": "top"
+      },
+      "steps/content/agents/content-outliner.step.ts": {
+        "x": 408,
+        "y": 472,
+        "sourceHandlePosition": "bottom",
+        "targetHandlePosition": "top"
+      }
     }
   }
-}
+]

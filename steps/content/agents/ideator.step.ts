@@ -1,17 +1,17 @@
-import { EventConfig, FlowContext, StepHandler } from 'motia'
-import zodToJsonSchema from 'zod-to-json-schema'
-import Mustache from 'mustache'
 import fs from 'fs'
+import { EventConfig, Handlers } from 'motia'
+import Mustache from 'mustache'
 import path from 'path'
 import { z } from 'zod'
-import { openai } from '../../../src/openai'
-import { contentIdeaSchema, ContentIdea } from '../../../src/types/content-idea'
+import zodToJsonSchema from 'zod-to-json-schema'
 import { ContentState } from '../../../src/content-state'
+import { openai } from '../../../src/openai'
+import { ContentIdea, contentIdeaSchema } from '../../../src/types/content-idea'
 
 const input = z.object({ contentIdea: z.string(), contentType: z.string() })
 
-export const config: EventConfig<typeof input> = {
-  name: 'Ideator Agent',
+export const config: EventConfig = {
+  name: 'IdeatorAgent',
   description: 'Responsible for generating initial content ideas and high-level direction.',
   type: 'event',
   emits: [{ topic: 'build-outline', label: 'Create content outline' }],
@@ -24,7 +24,7 @@ export const config: EventConfig<typeof input> = {
 
 const contentIdeaSchemaJson = zodToJsonSchema(contentIdeaSchema)
 
-export const handler: StepHandler<typeof config> = async (input, { logger, state, emit, traceId }: FlowContext) => {
+export const handler: Handlers['IdeatorAgent'] = async (input, { logger, state, emit, traceId }) => {
   const { contentIdea, contentType } = input
   const props = { contentIdea, contentType }
 

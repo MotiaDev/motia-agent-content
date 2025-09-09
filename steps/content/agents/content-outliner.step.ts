@@ -1,17 +1,17 @@
-import { EventConfig, FlowContext, StepHandler } from 'motia'
-import zodToJsonSchema from 'zod-to-json-schema'
-import Mustache from 'mustache'
 import fs from 'fs'
+import { EventConfig, Handlers } from 'motia'
+import Mustache from 'mustache'
 import path from 'path'
 import { z } from 'zod'
+import zodToJsonSchema from 'zod-to-json-schema'
+import { ContentState } from '../../../src/content-state'
 import { openai } from '../../../src/openai'
 import { contentOutlineSchema } from '../../../src/types/content-outline'
-import { ContentState } from '../../../src/content-state'
 
 const input = z.object({ contentId: z.string() })
 
-export const config: EventConfig<typeof input> = {
-  name: 'Content Outliner',
+export const config: EventConfig = {
+  name: 'ContentOutliner',
   description: 'Creates detailed content outline based on the initial idea',
   type: 'event',
   emits: [{ topic: 'write-content', label: 'Write first content' }],
@@ -26,7 +26,7 @@ const outlineSchemaJson = zodToJsonSchema(contentOutlineSchema)
 
 type ContentOutline = z.infer<typeof contentOutlineSchema>
 
-export const handler: StepHandler<typeof config> = async (input, { logger, state, emit }: FlowContext) => {
+export const handler: Handlers['ContentOutliner'] = async (input, { logger, state, emit }) => {
   const { contentId } = input
   const contentState = new ContentState(state)
 
@@ -59,8 +59,5 @@ export const handler: StepHandler<typeof config> = async (input, { logger, state
   await contentState.setStatus(contentId, 'outline-generated')
   await contentState.setContentOutline(contentId, outline)
 
-  await emit({
-    topic: 'write-content',
-    data: { contentId, stage: 'content' },
-  })
+  await emit({ topic: 'write-content', data: { contentId } })
 }
